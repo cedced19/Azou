@@ -6,4 +6,4 @@ Apprenez le avec Azou !
 
 Azou est un petit personnage qui va vous aidez pour le clavier AZERTY !
 
-Site : [cedced19.github.io/Azou](http://cedced19.github.io/azou/)
+Site : [cedced19.github.io/azou](http://cedced19.github.io/azou/)
