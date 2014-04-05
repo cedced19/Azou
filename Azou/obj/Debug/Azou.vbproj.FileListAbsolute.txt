@@ -1,0 +1,10 @@
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\bin\Debug\Azou.exe.config
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\bin\Debug\Azou.exe
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\bin\Debug\Azou.pdb
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\bin\Debug\Azou.xml
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\obj\Debug\Azou.Form1.resources
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\obj\Debug\Azou.Resources.resources
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\obj\Debug\Azou.vbproj.GenerateResource.Cache
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\obj\Debug\Azou.exe
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\obj\Debug\Azou.xml
+C:\Users\Cédric\SkyDrive\Visual Studio 2010\Projects\Azou\Azou\obj\Debug\Azou.pdb
