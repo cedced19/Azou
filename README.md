@@ -10,3 +10,6 @@ Apprenez le avec Azou !
 Il contient aussi un système de verification de mise à jour.
 
 [Site](http://cedced19.github.io/azou/)
+
+## License
+[CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/)
