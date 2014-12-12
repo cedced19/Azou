@@ -1,7 +1,7 @@
 {
   "name": "azou",
   "version": "0.0.1",
-  "description": "Azou's game",
+  "description": "Azou game",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.6.0",
@@ -11,7 +11,6 @@
     "grunt-usemin": "^2.2.0",
     "grunt-contrib-htmlmin": "^0.3.0",
     "grunt-contrib-concat": "^0.5.0",
-    "grunt-shell": "^1.0.1",
     "grunt-autoprefixer": "^1.0.1",
     "time-grunt": "^1.0.0"
   },

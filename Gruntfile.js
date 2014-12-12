@@ -1,14 +1,6 @@
 module.exports = function(grunt) {
   require('time-grunt')(grunt);
   var config = {
-    shell: {
-        ungit: {
-            command: 'ungit'
-        },
-        server: {
-            command: 'fast-http 80'
-        }
-    },
     usemin: {
         html: ['index.html', 'game.html']
     },
@@ -77,6 +69,4 @@ module.exports = function(grunt) {
   // Load all Grunt tasks
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
   grunt.registerTask('default', ['copy', 'usemin', 'htmlmin', 'concat', 'uglify', 'cssmin', 'autoprefixer']);
-  grunt.registerTask('test', ['default', 'shell:server']);
-  grunt.registerTask('commit', ['default', 'shell:ungit']);
 };
