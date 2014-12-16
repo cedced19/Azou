@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           files:[
              {
               dest: 'scripts/game.js',
-              src: [ 'dev/scripts/jquery.min.js', 'dev/scripts/game.js' ]
+              src: [ 'dev/scripts/jquery.min.js', 'dev/scripts/game.js', 'dev/scripts/sweet-alert.js' ]
               }
              ]
         }
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
       cssmin: {
         main: {
           files: {
-            'styles/styles.css': ['dev/styles/game.css', 'dev/styles/home.css']
+            'styles/styles.css': ['dev/styles/game.css', 'dev/styles/home.css', 'dev/styles/sweet-alert.css']
           }
         }
       },

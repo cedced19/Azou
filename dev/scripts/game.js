@@ -8,7 +8,23 @@
 
         if(secondes<0){
             secondes = 0;
-            $('#countdown').html('End of game!');
+            $('#countdown').html('0');
+            swal({
+              title: "End Of game",
+              text: "You have " + score + " points.",
+              type: "success",
+              showCancelButton: true,
+              confirmButtonText: "Play again !",
+              closeOnConfirm: true
+            },
+            function(){
+              secondes = 50;   
+              score = 0;
+              $('#score span').html(score);
+              $('.letter').remove();
+              setTimeout(timer, 1000);
+              setTimeout(generateLetters, 1000);
+            });
         }else{
             setTimeout(timer, 1000);
             setTimeout(generateLetters, 1000);
@@ -23,7 +39,7 @@
         if(secondes!=0){
              e.preventDefault();
              if(e.keyCode < 62){
-                console.log('This key is disable')
+                console.log('This key is disable');
              }else{
                 var keycode = String.fromCharCode(e.keyCode).toLowerCase();
                 $('.letter'+keycode).animate({ 'top'  : '20px', 'opacity': 0 }, 'fast');
