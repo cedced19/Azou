@@ -13,6 +13,9 @@ p{
     font-weight:bold;
     color:#666;
 }
+.big{
+    font-size:24px;
+}
 canvas {
     cursor:pointer;
 }

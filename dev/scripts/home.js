@@ -22,7 +22,7 @@
                 scene = new THREE.Scene();
 
 
-                var theText = "Azou";
+                var theText = 'Azou';
 
                 var hash = document.location.hash.substr( 1 );
 
@@ -37,7 +37,7 @@
                     size: 80,
                     height: 20,
                     curveSegments: 2,
-                    font: "helvetiker"
+                    font: 'helvetiker'
 
                 });
 

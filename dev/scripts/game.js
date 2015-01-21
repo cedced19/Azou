@@ -10,11 +10,11 @@
             secondes = 0;
             $('#countdown').html('0');
             swal({
-              title: "End Of game",
-              text: "You have " + score + " points.",
-              type: "success",
+              title: 'End Of game',
+              text: 'You have ' + score + ' points.',
+              type: 'success',
               showCancelButton: true,
-              confirmButtonText: "Play again !",
+              confirmButtonText: 'Play again !',
               closeOnConfirm: true
             },
             function(){
