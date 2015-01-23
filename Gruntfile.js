@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           files:[
              {
               dest: 'scripts/game.js',
-              src: [ 'dev/scripts/jquery.min.js', 'dev/scripts/game.js', 'dev/scripts/sweet-alert.js' ]
+              src: [ 'dev/scripts/jquery.min.js', 'dev/scripts/game.js', 'dev/scripts/sweet-alert.js', 'dev/scripts/random-color.js']
               }
              ]
         }

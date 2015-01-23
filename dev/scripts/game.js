@@ -63,16 +63,8 @@
         var top = Math.floor(Math.random() * 400),
         left = Math.floor(Math.random() * 700);
 
-        $('#container').append('<div class="letter letter'+ randomstring +'" style="left:'+ left +'px;top:'+ top +'px;background-color:#'+ generateColor() +'">'+ randomstring.toUpperCase() +'</div>');
+        $('#container').append('<div class="letter letter'+ randomstring +'" style="left:'+ left +'px;top:'+ top +'px;background-color:'+ randomColor({luminosity: 'light', hue: 'random'}) +'">'+ randomstring.toUpperCase() +'</div>');
     }
 
-    function generateColor() {
-        var color = '',
-        values = ['a', 'b', 'c', 'd', 'e', 'f', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-        for(c = 0; c<6; c++){
-            color += values[Math.floor(Math.random() * 10)]
-        }
-        return color;
-    }
 
 })(jQuery);
