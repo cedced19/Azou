@@ -20,7 +20,7 @@ module.exports = function(grunt) {
       main: {
           expand: true,
           cwd: 'dev/',
-          src: ['**/*.html', 'scripts/three.min.js', 'scripts/typeface.min.js'],
+          src: ['**/*.html', 'scripts/home/three.min.js', 'scripts/home/typeface.min.js'],
           dest: ''
       }
     },
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           files:[
              {
               dest: 'scripts/game.js',
-              src: [ 'dev/scripts/jquery.min.js', 'dev/scripts/sweet-alert.js', 'dev/scripts/random-color.js', 'dev/scripts/game.js']
+              src: [ 'dev/scripts/game/jquery.min.js', 'dev/scripts/game/sweet-alert.js', 'dev/scripts/game/random-color.js', 'dev/scripts/game/index.js']
               }
              ]
         }
@@ -42,8 +42,8 @@ module.exports = function(grunt) {
         files: [
                 { dest: 'scripts/game.js',
                     src: [ 'scripts/game.js' ] },
-                { dest: 'scripts/home.js',
-                   src: [ 'dev/scripts/home.js' ] }
+                { dest: 'scripts/home/index.js',
+                   src: [ 'dev/scripts/home/index.js' ] }
                ]
              }
        },

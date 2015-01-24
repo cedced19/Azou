@@ -1,7 +1,7 @@
 (function($){
 
     var score = 0,
-    secondes = 50;
+    secondes = 60;
     function timer(){
         $('#countdown').html(secondes);
         secondes--;
@@ -27,7 +27,7 @@
             });
         }else{
             setTimeout(timer, 1000);
-            setTimeout(generateLetters, 1000);
+            setTimeout(generateLetters, 600);
         }
 
     }
@@ -63,7 +63,7 @@
         var top = Math.floor(Math.random() * 400),
         left = Math.floor(Math.random() * 700);
 
-        $('#container').append('<div class="letter letter'+ randomstring +'" style="left:'+ left +'px;top:'+ top +'px;background-color:'+ randomColor({luminosity: 'light', hue: 'random'}) +'">'+ randomstring.toUpperCase() +'</div>');
+        $('#container').append('<div class="letter letter'+ randomstring +'" style="left:'+ left +'px;top:'+ top +'px;background-color:'+ randomColor() +'">'+ randomstring.toUpperCase() +'</div>');
     }
 
 

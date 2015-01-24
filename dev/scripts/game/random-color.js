@@ -1,32 +1,9 @@
 ;(function(root, factory) {
-
-  // Support AMD
-  if (typeof define === 'function' && define.amd) {
-    define([], factory);
-
-  // Support CommonJS
-  } else if (typeof exports === 'object') {
-    var randomColor = factory();
-    
-    // Support NodeJS & Component, which allow module.exports to be a function
-    if (typeof module === 'object' && module && module.exports) {
-      exports = module.exports = randomColor;
-    }
-    
-    // Support CommonJS 1.1.1 spec
-    exports.randomColor = randomColor;
-  
-  // Support vanilla script loading
-  } else {
     root.randomColor = factory();
-  };
-
 }(this, function() {
 
-  // Shared color dictionary
   var colorDictionary = {};
 
-  // Populate the color dictionary
   loadColorBounds();
 
   var randomColor = function(options) {
@@ -34,34 +11,13 @@
 
     var H,S,B;
 
-    // Check if we need to generate multiple colors
-    if (options.count != null) {
-
-      var totalColors = options.count,
-          colors = [];
-
-      options.count = null;
-
-      while (totalColors > colors.length) {
-        colors.push(randomColor(options));
-      }
-
-      options.count = totalColors;
-
-      return colors;
-    }
-
-    // First we pick a hue (H)
     H = pickHue(options);
 
-    // Then use H to determine saturation (S)
-    S = pickSaturation(H, options);
+    S = pickSaturation(H);
 
-    // Then use S and H to determine brightness (B).
-    B = pickBrightness(H, S, options);
+    B = pickBrightness(H, S);
 
-    // Then we return the HSB color in the desired format
-    return setFormat([H,S,B], options);
+    return HSVtoHex([H,S,B]);
   };
 
   function pickHue (options) {
@@ -69,43 +25,20 @@
     var hueRange = getHueRange(options.hue),
         hue = randomWithin(hueRange);
 
-    // Instead of storing red as two seperate ranges,
-    // we group them, using negative numbers
     if (hue < 0) {hue = 360 + hue}
 
     return hue;
 
   }
 
-  function pickSaturation (hue, options) {
+  function pickSaturation (hue) {
 
-    if (options.luminosity === 'random') {
-      return randomWithin([0,100]);
-    }
-
-    if (options.hue === 'monochrome') {
-      return 0;
-    }
 
     var saturationRange = getSaturationRange(hue);
 
     var sMin = saturationRange[0],
-        sMax = saturationRange[1];
-
-    switch (options.luminosity) {
-
-      case 'bright':
-        sMin = 55;
-        break;
-
-      case 'dark':
-        sMin = sMax - 10;
-        break;
-
-      case 'light':
         sMax = 55;
-        break;
-   }
+
 
     return randomWithin([sMin, sMax]);
 
@@ -117,45 +50,9 @@
         bMin = getMinimumBrightness(H, S),
         bMax = 100;
 
-    switch (options.luminosity) {
-
-      case 'dark':
-        bMax = bMin + 20;
-        break;
-
-      case 'light':
-        bMin = (bMax + bMin)/2;
-        break;
-
-      case 'random':
-        bMin = 0;
-        bMax = 100;
-        break;
-    }
+    bMin = (bMax + bMin)/2;
 
     return randomWithin([bMin, bMax]);
-
-  }
-
-  function setFormat (hsv, options) {
-
-    switch (options.format) {
-
-      case 'hsvArray':
-        return hsv;
-
-      case 'hsv':
-        return colorString('hsv', hsv);
-
-      case 'rgbArray':
-        return HSVtoRGB(hsv);
-
-      case 'rgb':
-        return colorString('rgb', HSVtoRGB(hsv));
-
-      default:
-        return HSVtoHex(hsv);
-    }
 
   }
 
@@ -214,7 +111,6 @@
 
   function getColorInfo (hue) {
 
-    // Maps red colors to make picking hue easier
     if (hue >= 334 && hue <= 360) {
       hue-= 360;
     }
